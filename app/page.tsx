@@ -1,0 +1,22 @@
+import Image from "next/image";
+import Link from "next/link";
+import { ContactForm } from "./contact/ContactForm";
+import { SiteShell } from "./components/SiteShell";
+import { createPageMetadata } from "./lib/metadata";
+
+export const metadata = createPageMetadata({ title: "Maine Website Design & Email Marketing", description: "Website design, local SEO and email marketing for Maine small businesses. Get help with your website, customer follow-up and next marketing decision.", path: "/", home: true });
+const serviceLinks = [
+  ["Website design & local SEO", "Help customers understand what you do and get in touch.", "/services/website-creation-seo-aeo"],
+  ["Email marketing", "Give people useful information and a reason to come back.", "/services/email-lifecycle-retention"],
+  ["AI consulting & setup", "Set up help with a task your business keeps repeating.", "/services/ai-implementation"],
+  ["Marketing advice", "Decide what to work on and where to spend.", "/services/marketing-consultation"],
+];
+export default function Home() {
+  return <SiteShell><main id="main-content" className="studio-home">
+    <section className="hero shell"><div className="hero-copy"><h1>You know your business.<br />{" "}<span>We’ll help with the marketing.</span></h1><p className="hero-body">We build websites, improve local search visibility and create customer emails for independent businesses in Maine and the Northeast.</p><div className="button-row"><a className="button" href="#contact">Tell us what you need</a><a className="text-link" href="#services">Explore our services</a></div></div><figure className="hero-photo"><picture><source srcSet="/images/green-falls-waterfall.avif" type="image/avif" /><Image src="/images/green-falls-waterfall.webp" width="654" height="872" alt="Water flowing over moss-covered rock at Green Falls in Baxter State Park" fetchPriority="high" unoptimized sizes="(max-width: 760px) 100vw, 390px" /></picture></figure></section>
+    <section id="services" className="studio-services shell" aria-labelledby="services-heading"><div className="studio-service-intro"><h2 id="services-heading">What do you need<br /> help with?</h2><p>Start with the part that needs attention. We’ll help you work out what the project should include.</p></div><div className="studio-service-links">{serviceLinks.map(([title,body,href])=><Link key={href} href={href}><div><h3>{title}</h3><p>{body}</p></div></Link>)}</div></section>
+    <section className="studio-experience"><div className="shell studio-experience-grid"><div><h2>Experience building customer email programs from the ground up.</h2><p>Our background includes starting an agency’s customer email service and running email programs for several brands. We’ve worked hands-on in Klaviyo, HubSpot and Customer.io.</p><Link className="text-link" href="/about">About Green Falls</Link></div><div className="studio-working"><h3>Based in Maine.<br />Working across the Northeast.</h3><p>We work with independent shops, trades, restaurants and other businesses that need marketing help without hiring an in-house team.</p><p>You’ll review a written project plan and cost before work starts. We share working drafts along the way and hand over the files, access and instructions you need.</p><Link className="text-link" href="/approach">How a project works</Link></div></div></section>
+    <section className="studio-reading shell"><h2>Something useful<br />{" "}to start with.</h2><div><Link href="/insights/website-does-not-match-your-work"><span>Website review · 4 min read</span><h3>Why isn’t your website getting inquiries?</h3><span className="reading-link">Read the guide</span></Link><Link href="/insights/email-automations-small-business"><span>Email marketing · 5 min read</span><h3>Which automated emails should you set up first?</h3><span className="reading-link">Read the guide</span></Link></div></section>
+    <section id="contact" className="home-contact" aria-labelledby="home-contact-heading"><div className="shell home-contact-grid"><div className="home-contact-copy"><h2 id="home-contact-heading">What’s on your list?</h2><p>A website that needs work. Emails you haven’t had time to send. A marketing decision you’d like a second opinion on.</p><p>Tell us a little about your business and what you need. We’ll reply by email with any questions and let you know how we can help.</p><p className="home-contact-email">Prefer email? <a href="mailto:info@greenfalls.co">info@greenfalls.co</a></p></div><ContactForm source="home" /></div></section>
+  </main></SiteShell>;
+}

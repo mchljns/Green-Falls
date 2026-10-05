@@ -1,0 +1,142 @@
+/* Green Falls homepage and the email service example. */
+.studio-home .hero{min-height:0;grid-template-columns:minmax(0,1.45fr) minmax(0,.85fr);gap:80px;padding-block:64px 76px;align-items:center}
+.studio-home .hero h1{font-size:clamp(2.4rem,4.65vw,4.1rem);line-height:1.05;letter-spacing:-.02em;max-width:17ch;margin:0}
+.studio-home .hero-body{font-size:1.125rem;line-height:1.6;max-width:48ch;margin-top:28px}
+.studio-home .hero-photo{width:100%;height:405px;max-width:390px}
+.studio-home .hero-photo img{object-position:50% 59%}
+.studio-home .button-row{margin-top:28px}
+.email-showcase{display:grid;grid-template-columns:minmax(0,.65fr) minmax(0,1fr);gap:64px;align-items:start;background:#d4e7eb;padding:42px}
+.email-showcase-intro h3{font-size:2rem;line-height:1.1;margin-bottom:20px;max-width:15ch}
+.email-showcase-intro p{font-size:1rem;line-height:1.6;color:#344f58}
+.studio-email{background:white;color:#20282a;font-family:Arial,Helvetica,sans-serif;width:100%;max-width:620px;margin:0 auto;border:1px solid #a4bcc0}
+.studio-email h3,.studio-email h4,.studio-email p,.studio-email a,.studio-email span{font-family:Arial,Helvetica,sans-serif}
+.email-masthead{padding:28px 32px 24px}
+.email-masthead svg{width:200px;max-width:100%;height:auto}
+.email-masthead>span{display:block;font-size:14px;margin-top:16px;color:#4c5b56}
+.email-lead{background:#20282a;color:#f8faf7;padding:32px}
+.email-lead>span{font-size:14px;letter-spacing:.07em;color:#c7d83f;font-weight:bold}
+.email-lead h3{font-size:clamp(2.1rem,4vw,3.7rem);font-weight:600;line-height:1.02;letter-spacing:-.04em;margin:20px 0}
+.email-lead p{font-size:18px;line-height:1.5;max-width:29ch;margin:0;color:#e0e7e2}
+.email-body{padding:30px 32px}
+.email-body p{font-size:16px;line-height:1.6;margin:0 0 20px}
+.email-body h4{font-size:19px;font-weight:700;line-height:1.3;margin:0 0 12px;letter-spacing:-.01em}
+.email-task{background:#edf2e3;border-left:4px solid #657b3d;padding:20px;margin:24px 0}
+.email-task p{margin-bottom:0}
+.email-cta{display:block;max-width:100%;padding:17px 20px;background:#c7d83f;color:#20282a;font-size:16px;font-weight:700;line-height:1.4;text-align:center;border-radius:0}
+.email-cta:hover{background:#d3e64a}
+.email-signoff{border-top:1px solid #d9e1db;margin:0 32px;padding:24px 0 28px}
+.email-signoff p{font-size:16px;margin:0}
+.email-signoff a{font-size:16px;text-decoration:underline;text-underline-offset:4px;display:inline-flex;min-height:44px;align-items:center}
+.email-signoff>span{display:block;font-size:14px;color:#52645c;margin-top:16px}
+.studio-services{border-top:1px solid #bac5bc;display:grid;grid-template-columns:.85fr 1.3fr;gap:96px;padding-block:80px}
+.studio-service-intro h2{font-size:clamp(2rem,3vw,2.8rem);margin:0 0 22px;line-height:1.08}
+.studio-service-intro p{max-width:35ch;color:#4c5e54;font-size:1rem;line-height:1.65}
+.studio-service-links{border-top:1px solid #9fac9f}
+.studio-service-links>a{display:flex;align-items:center;justify-content:space-between;gap:30px;padding:25px 0;border-bottom:1px solid #bac5bc}
+.studio-service-links h3{font-size:1.65rem;margin:0 0 8px;line-height:1.2}
+.studio-service-links p{font-size:1rem;line-height:1.5;color:#4c5e54;margin:0;max-width:40ch}
+
+.studio-service-links>a:hover h3{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
+
+.studio-experience{background:#202f2b;color:#f8faf7;padding:72px 0}
+.studio-experience-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:96px}
+.studio-experience h2{font-size:clamp(1.8rem,2.75vw,2.5rem);line-height:1.16;margin:0 0 24px;max-width:22ch}
+.studio-experience p{font-size:1rem;line-height:1.7;color:#d0ddd4;max-width:53ch}
+.studio-experience .text-link{color:#f8faf7}
+.studio-working{padding-left:40px;border-left:1px solid #6a8073}
+.studio-working h3{font-size:1.5rem;font-weight:600;line-height:1.25;margin:0 0 24px}
+.studio-reading{display:grid;grid-template-columns:.85fr 1.3fr;gap:96px;padding-block:80px}
+.studio-reading h2{font-size:clamp(1.8rem,2.75vw,2.5rem);line-height:1.12;margin:0}
+.studio-reading>div{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.studio-reading a{display:flex;flex-direction:column;align-items:flex-start;border-top:2px solid #14758c;padding-top:20px}
+.studio-reading a>span:first-child{font-size:.875rem;line-height:1.5;color:#456257}
+.studio-reading h3{font-size:1.5rem;line-height:1.25;margin:16px 0 24px}
+.studio-reading .reading-link{font-size:.875rem;font-weight:650;margin-top:auto;padding-bottom:6px;border-bottom:1px solid}
+.studio-reading a:hover h3{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.studio-contact{background:#c7d83f;padding:52px 0;color:#20282a}
+.studio-contact>.shell{display:grid;grid-template-columns:.85fr 1.3fr;gap:96px;align-items:start}
+.studio-contact h2{font-size:clamp(2rem,3.7vw,3.5rem);margin:0;line-height:1.08;max-width:10ch}
+.studio-contact p{font-size:1.1rem;line-height:1.6;max-width:47ch;margin:0 0 24px}
+.studio-contact .button{background:#20282a;border-color:#20282a;color:#f8faf7}
+.studio-contact .button:hover{background:#354640}
+@media(max-width:1100px){.studio-home .hero{gap:48px}
+.studio-home .hero-photo{height:365px}
+.email-showcase{padding:30px;gap:32px}
+.email-showcase-intro h3{font-size:1.65rem}
+.studio-services,.studio-experience-grid,.studio-reading,.studio-contact>.shell{gap:48px}
+.studio-reading{grid-template-columns:.7fr 1.3fr}}
+@media(max-width:760px){.studio-home .hero{grid-template-columns:1fr;gap:28px;padding-block:32px 40px}
+.studio-home .hero h1{font-size:clamp(2.1rem,6.5vw,3.2rem);max-width:21ch;line-height:1.08}
+.studio-home .hero-body{font-size:1rem;margin-top:22px;max-width:52ch}
+.studio-home .hero-photo{width:100%;max-width:none;height:210px}
+.studio-home .hero-photo img{object-position:50% 56%}
+.studio-home .button-row{margin-top:24px;gap:12px 22px}
+.email-showcase{grid-template-columns:1fr;padding:24px;gap:28px}
+.email-showcase-intro h3{font-size:1.65rem;max-width:26ch}
+.studio-services,.studio-experience-grid,.studio-reading,.studio-contact>.shell{grid-template-columns:1fr;gap:24px}
+.studio-services,.studio-reading{padding-block:44px}
+.studio-service-intro h2{font-size:1.85rem;margin-bottom:16px}
+.studio-service-intro h2 br,.studio-reading h2 br{display:none}
+.studio-service-intro p{max-width:52ch;margin-bottom:0}
+.studio-service-links>a{padding:22px 0;gap:18px}
+.studio-service-links h3{font-size:1.5rem}
+.studio-experience{padding:44px 0}
+.studio-experience h2{font-size:1.85rem;max-width:25ch}
+.studio-working{padding:26px 0 0;border-left:0;border-top:1px solid #6a8073}
+.studio-working h3{font-size:1.45rem;margin-bottom:18px}
+.studio-reading>div{gap:24px}
+.studio-reading h2{font-size:1.85rem}
+.studio-reading h3{font-size:1.35rem}
+.studio-contact{padding:36px 0}
+.studio-contact h2{font-size:2.3rem;max-width:none}
+.studio-contact p{font-size:1rem}}
+@media(max-width:480px){.studio-home .hero h1{font-size:clamp(2rem,8.5vw,2.7rem)}
+.studio-home .hero-photo{height:180px}
+.studio-home .button-row{align-items:flex-start}
+.studio-home .button{padding:12px 16px}
+.studio-home .text-link{font-size:.875rem}
+.email-showcase{padding:18px 0 0;background:transparent;gap:24px}
+.email-showcase-intro h3{font-size:1.6rem}
+.email-masthead,.email-lead{padding:24px}
+.email-lead h3{font-size:2.7rem}
+.email-lead p{font-size:16px}
+.email-body{padding:24px}
+.email-task{padding:16px}
+.email-signoff{margin:0 24px}
+.studio-reading>div{grid-template-columns:1fr;gap:28px}
+.studio-reading h3{max-width:25ch}
+}
+
+@media(max-width:640px){html{scroll-padding-top:20px}}
+.email-service-example{grid-template-columns:minmax(0,.65fr) minmax(0,1fr)}
+.email-service-example h2{font-size:2rem;line-height:1.12}
+.email-service-example .studio-email{max-width:620px}
+@media(max-width:760px){.email-service-example{grid-template-columns:1fr}
+.email-service-example h2{font-size:1.7rem}}
+.email-showcase{grid-template-areas:"intro email" "notes email";grid-template-rows:auto 1fr;row-gap:0}
+.email-showcase-intro{grid-area:intro}
+.email-showcase>.studio-email{grid-area:email}
+.email-service-example{grid-template-areas:"intro email";grid-template-rows:auto}
+@media(max-width:760px){.email-showcase{grid-template-areas:"intro" "email" "notes";grid-template-rows:auto;row-gap:24px}
+.email-showcase-intro p{margin-bottom:0}
+.email-service-example{grid-template-areas:"intro" "email"}}
+@media(max-width:360px){.email-lead h3{font-size:2.15rem;line-height:1.06}}
+
+.email-showcase-intro p+p{margin-top:16px}
+
+/* Let the full-width example band provide the surround. */
+.example-section .email-showcase{background:transparent;padding:0}
+.studio-contact{padding-block:40px}
+.studio-contact h2{font-size:clamp(2rem,3vw,2.8rem);max-width:none}
+@media(max-width:760px){.studio-contact{padding-block:32px}.studio-contact h2{font-size:2rem}}
+.home-contact{padding-block:72px;background:var(--lichen);color:var(--basalt);scroll-margin-top:110px}
+.home-contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px;align-items:start}
+.home-contact-copy h2{font-size:clamp(2rem,3.7vw,3.5rem);line-height:1.08;margin:0 0 28px;max-width:10ch}
+.home-contact-copy p{font-size:1rem;line-height:1.65;max-width:39ch;margin:0 0 24px}
+.home-contact-copy .home-contact-email{margin-top:36px}
+.home-contact-email a{text-decoration:underline;text-underline-offset:4px;display:inline-block;padding-block:8px}
+.home-contact a:focus-visible{outline-color:var(--basalt)}
+.home-contact .contact-form{min-width:0;grid-row:auto}
+@media(max-width:1050px){.home-contact-grid{gap:40px}}
+@media(max-width:900px){.home-contact-grid{grid-template-columns:1fr;gap:24px}.home-contact-copy h2{max-width:none}.home-contact-copy p{max-width:58ch}.home-contact-copy .home-contact-email{margin-top:0}}
+@media(max-width:640px){.home-contact{padding-block:36px;scroll-margin-top:16px}.home-contact-copy h2{font-size:2rem;margin-bottom:20px}.home-contact-copy p{margin-bottom:16px}.home-contact-copy .home-contact-email{margin-bottom:0}}
