@@ -32,12 +32,13 @@ To disable optional development telemetry, set `NEXT_TELEMETRY_DISABLED=1` and `
 - `app/components/SiteShell.tsx`: shared navigation and footer.
 - `app/components/PageBlocks.tsx`: shared hero, CTA and FAQ components.
 - `app/lib/content.ts`: four services and five guides; includes search metadata and article dates.
-- `app/services/[slug]/page.tsx`: service detail template.
+- `app/services/[slug]/page.tsx`: service detail template, including the sample newsletter on the email page and the inline contact form.
+- `app/contact/ContactForm.tsx`: the shared form; `source` tags the lead event, `defaultArea` preselects the service.
 - `app/who-we-help/[audience]/page.tsx`: contractor and retail pages.
 - `app/insights/[slug]/page.tsx`: article template and related links.
 - `app/lib/metadata.ts`: canonicals, social metadata and structured data.
 - `app/sitemap.ts` and `app/robots.ts`: crawl discovery.
-- `app/globals.css`, `app/studio.css`, `app/service-visuals.css`: current styles.
+- `app/globals.css` and `app/studio.css`: current styles.
 - `app/components/BrandLogo.tsx` and `public/brand/`: approved logo artwork.
 - `public/favicon.*`: approved SVG plus PNG/ICO compatibility exports.
 - `docs/seo-review-2026-10-02.md`: search intent, changes, limitations and page map.

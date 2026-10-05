@@ -1,3 +1,3 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
-export default function WorkPage() { redirect("/services"); }
+export default function WorkPage() { permanentRedirect("/services"); }

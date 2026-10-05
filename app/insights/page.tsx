@@ -8,6 +8,6 @@ export const metadata = createPageMetadata({ title: "Small Business Website & Em
 
 export default function InsightsPage() {
   return <SiteShell><main id="main-content"><PageHero title="Advice for your next marketing decision." intro="Practical guides to improving inquiries, comparing website proposals, planning customer emails and putting AI to work." />
-    <section className="section shell insights-index insights-focused"><div className="article-index">{insights.map((article) => <Link href={`/insights/${article.slug}`} key={article.slug}><div><p>{article.topic}</p><h2>{article.title}</h2><b>{article.dek}</b></div><em>{article.read}</em></Link>)}</div></section>
+    <section className="section shell insights-index insights-focused"><div className="article-index">{insights.map((article) => <Link href={`/insights/${article.slug}`} key={article.slug}><div><p>{article.topic}</p><h2>{article.title}</h2><span className="article-dek-line">{article.dek}</span></div><span className="article-read">{article.read}</span></Link>)}</div></section>
     <FinalCTA title="Need help applying this to your business?" body="Share your website or describe the task you’re considering. We can discuss the work and what it would involve." /></main></SiteShell>;
 }

@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import "@fontsource-variable/archivo/standard.css";
 import "@fontsource-variable/libre-franklin";
 import "./globals.css";
-import "./service-visuals.css";
 import "./studio.css";
 import { GoogleAnalytics } from "./components/GoogleAnalytics";
 import { StructuredData } from "./components/StructuredData";

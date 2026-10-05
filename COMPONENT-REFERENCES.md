@@ -22,3 +22,7 @@ The published visual previews of these alternatives were opened and inspected:
 Also reviewed [21st’s image-gallery guidance](https://21st.dev/blog/react-image-gallery-components) and browsed the mobile-navbar collection. No additional third-party source was installed. Current photo markup reserves image space and lazy-loads the below-fold portfolio imagery.
 
 The Tailark FAQ URL redirected to a component-not-found page; it was not used as an implementation reference.
+
+## October 5, 2026
+
+The Tabs Subtle and Segmented Control adaptations described above no longer ship: the tabbed service explorer and the work viewer were removed from the site, and their files are unused. The sticky header adaptation remains, now at a constant height with a translucent surface.

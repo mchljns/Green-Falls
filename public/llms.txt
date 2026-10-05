@@ -1,19 +1,27 @@
 # Green Falls Co.
 
-Green Falls Co. is a senior independent marketing studio based in Maine and helping independent businesses across the Northeast.
+Green Falls Co. is a marketing studio based in Maine. We build websites, improve local search visibility, create customer emails and set up practical AI for independent businesses across Maine and the Northeast.
 
 ## Services
 
-- Website creation, local SEO and AI-answer readiness
-- Email lifecycle and retention marketing
-- Practical AI workflow implementation
-- Senior marketing consultation
+- Website design and local SEO: https://greenfalls.co/services/website-creation-seo-aeo
+- Email marketing, including Klaviyo flows and campaigns: https://greenfalls.co/services/email-lifecycle-retention
+- AI consulting and setup for one repeated task: https://greenfalls.co/services/ai-implementation
+- Marketing consultation and a 90-day plan: https://greenfalls.co/services/marketing-consultation
 
-## Audience
+## Who we help
 
-Green Falls works with owner-led and independent businesses, including trades and home services, specialty shops and repair businesses, restaurants and hospitality, music businesses and other established regional operators.
+Independent businesses: trades and home services, specialty shops and repair businesses, restaurants and hospitality. See https://greenfalls.co/who-we-help
+
+## How a project works
+
+You review a written project plan and cost before work starts, see working drafts along the way, and receive the files, access and instructions at handover. See https://greenfalls.co/approach
+
+## Guides
+
+Practical guides on website inquiries, redesign proposals, email automation and AI customer replies: https://greenfalls.co/insights
 
 ## Contact
 
-Website: https://greenfalls.co
+Website: https://greenfalls.co/contact
 Email: info@greenfalls.co

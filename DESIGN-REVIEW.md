@@ -60,3 +60,26 @@ Restored the shared sending contact form at the end of the homepage. The hero ac
 Promoted the approved staging design into the existing live project, retaining production hosting identity, GA4 measurement ID, page-view tracking, FormSubmit recipient and privacy disclosures. Enabled indexing and refreshed sitemap modification dates.
 
 Checked desktop and 390/320/768px iframe layouts: no horizontal content overflow or broken images. Browser QA verified required fields, bare .co entry, and locally simulated success/failure/retry. External form requests were blocked by a QA-only CSP; the simulation and test page were removed before the build. Actual inbox delivery was not verified.
+
+
+## October 5, 2026 — findability and reaching out
+
+Goal for this pass: a site that can be found and that makes it easy to ask about services. Changes, in the order a visitor meets them:
+
+- **Service pages carry their own contact form.** The hero button now scrolls to a form at the end of the page instead of leaving for `/contact`. The form's "help with" field is preselected for that service and the `generate_lead` event records `service-website`, `service-email`, `service-ai` or `service-plan` as its location, so inquiries can be traced to the page that produced them.
+- **Business is optional on the form.** Name, email and message are enough to start a conversation. A sole trader without a trading name is no longer stopped.
+- **The form shows a real success state.** After sending, the fields are replaced by a confirmation and a way to add more by email. A hidden live region announces success and failure to screen readers.
+- **The email service page shows the sample newsletter again**, labeled on the page as a design example and not a sent campaign, as this document already describes.
+- **`/work` now redirects permanently** (308) instead of temporarily (307), so search engines consolidate on `/services`.
+- **`llms.txt` uses the site's plain voice** and links each service page.
+- **Header.** Constant height while scrolling; the 14 px content shift on desktop is gone. The bar is translucent with a blur, falling back to solid snowmelt under reduced-transparency. The desktop navigation now shows from 1024 px, so iPad landscape gets the links instead of the menu button. The current-page link is basalt on mist (contrast was 4.33:1, now above 4.5:1) with the duplicate underline removed. The logo link is sized to the logo.
+- **Columns hold one left edge.** The FAQ and related links on service and audience pages sit in the same two-column grid as the rest of the page, and the article body starts at the page margin instead of a centred column.
+- **Hero.** Headline capped at 20 characters per line so it sets in three lines, the photo bottom-aligned with the buttons and slightly larger, a 4:3 crop on phones instead of a 180 px strip.
+- **Small targets and semantics.** Article "next step" and "further reading" links use the text-link style and a 44 px target; the byline link too. The insights index and the Services diagnostic list use spans instead of `<b>` and `<em>`. Trailing spaces left by removed arrows are gone. The three "Start with one project" cards sit in three columns at desktop, with no empty bordered cell.
+- **Article "Example" callouts** use a teal top rule and label instead of a shaded left border, per the brief.
+- **Motion that explains state only.** Press feedback on buttons, a 150 ms fade on mobile menu links, a 200 ms height transition on FAQ answers where the browser supports `::details-content`, and a short rise on form status lines. All of it is off under reduced motion.
+- **Stylesheets.** 235 rules whose classes no component referenced were removed from `globals.css` and `studio.css` (about 18 KB), including everything that styled the deleted homepage sections, the tabbed service explorer and the old work viewer. `service-visuals.css` is no longer imported. `ServiceExplorer.tsx`, `ServiceVisuals.tsx`, `service-visuals.css` and `app/chatgpt-auth.ts` are no longer used and can be deleted.
+
+Not done here, and still the most important items for the goal: confirm the live FormSubmit delivery with one real test, set up Search Console and a Google Business Profile, collect genuine reviews, and decide on a phone number and a reply-time promise.
+
+Verification in this pass: the real components and stylesheets were rendered to static HTML and checked in Chromium at 390, 768, 1024 and 1440 px for overflow, contrast and tap targets. The Vinext build, the test suite, ESLint and `tsc` could not run in the review environment (npm registry blocked), so run `npm ci`, `npm run build` and `npm test` before merging. The `/work` test asserts a 308; if Vinext does not implement `permanentRedirect`, that test will say so.

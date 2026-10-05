@@ -63,7 +63,8 @@ test("contact page explains and renders every required next step", async () => {
   const html = await response.text();
   assert.match(html, /What would you like help with/);
   assert.match(html, /<input(?=[^>]*name="name")(?=[^>]*required)[^>]*>/);
-  assert.match(html, /<input(?=[^>]*name="business")(?=[^>]*required)[^>]*>/);
+  assert.match(html, /<input(?=[^>]*name="business")[^>]*>/);
+  assert.doesNotMatch(html, /<input(?=[^>]*name="business")(?=[^>]*required)[^>]*>/);
   assert.match(html, /<input(?=[^>]*name="email")(?=[^>]*required)[^>]*>/);
   assert.match(html, /<input(?=[^>]*name="website")(?=[^>]*type="text")(?=[^>]*placeholder="greenfalls\.co")[^>]*>/);
   assert.doesNotMatch(html, /<input(?=[^>]*name="website")(?=[^>]*type="url")[^>]*>/);
@@ -124,6 +125,25 @@ test("service pages include canonical metadata and accurate structured data", as
   assert.match(html, /"@type":"FAQPage"/);
   assert.match(html, /Test the actions that matter/);
   assert.doesNotMatch(html, /Fieldstone|Cedar Street|href="\/work"/);
+  assert.match(html, /href="#contact"/);
+  assert.match(html, /<section(?=[^>]*id="contact")/);
+  assert.match(html, /<form(?=[^>]*class="contact-form")/);
+  assert.match(html, /<option(?=[^>]*selected)[^>]*>Website and search<\/option>/);
+});
+
+test("the email service page shows the labeled sample newsletter and its own form", async () => {
+  const response = await fetchPage("/services/email-lifecycle-retention");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /class="studio-email"/);
+  assert.match(html, /not a sent campaign/);
+  assert.match(html, /<option(?=[^>]*selected)[^>]*>Email marketing<\/option>/);
+});
+
+test("the retired work route redirects permanently to services", async () => {
+  const response = await fetchPage("/work");
+  assert.equal(response.status, 308);
+  assert.match(response.headers.get("location") ?? "", /\/services$/);
 });
 
 test("insight pages expose article metadata without naming an individual", async () => {
