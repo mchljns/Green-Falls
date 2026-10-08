@@ -31,6 +31,7 @@ To disable optional development telemetry, set `NEXT_TELEMETRY_DISABLED=1` and `
 - `app/page.tsx`: homepage and bottom contact form.
 - `app/components/SiteShell.tsx`: shared navigation and footer.
 - `app/components/PageBlocks.tsx`: shared hero, CTA and FAQ components.
+- `app/components/ServiceDiagram.tsx`: the inline SVG figure shown on each service page; one function per service.
 - `app/lib/content.ts`: four services and five guides; includes search metadata and article dates.
 - `app/services/[slug]/page.tsx`: service detail template, including the sample newsletter on the email page and the inline contact form.
 - `app/contact/ContactForm.tsx`: the shared form; `source` tags the lead event, `defaultArea` preselects the service.

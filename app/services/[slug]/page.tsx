@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { SiteShell } from "../../components/SiteShell";
 import { FAQ, PageHero } from "../../components/PageBlocks";
 import { StructuredData } from "../../components/StructuredData";
+import { ServiceDiagram } from "../../components/ServiceDiagram";
 import { StudioEmail } from "../../components/StudioEmail";
 import { ContactForm, type HelpArea } from "../../contact/ContactForm";
 import { services, type Service } from "../../lib/content";
@@ -18,6 +19,7 @@ const specifics: Record<Service["artifact"], { heading: string; body: string; ct
 };
 export default async function ServicePage({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const service=services.find(s=>s.slug===slug);if(!service)notFound();const spec=specifics[service.artifact];const shortName=service.short.toLowerCase().replace(/\bai\b/g, "AI");return <SiteShell><main id="main-content" className={`service-specific service-${service.artifact}`}><StructuredData data={serviceSchema(service)}/><PageHero backHref="/services" backLabel="All services" title={service.title} intro={service.intro}><a className="button" href="#contact">Discuss a project</a></PageHero>
 <section className="section shell service-scope"><div className="scope-deliverables"><h2>What your project can include</h2><ul className="plain-list">{service.includes.map(s=><li key={s}>{s}</li>)}</ul><p>We’ll agree on the work, cost and timing in your proposal before starting.</p></div><div className="scope-context"><h2>{spec.heading}</h2><p>{spec.body}</p><h3>When this service helps</h3><ul className="plain-list">{service.symptoms.map(s=><li key={s}>{s}</li>)}</ul></div></section>
+<ServiceDiagram artifact={service.artifact}/>
 {service.artifact==="email"&&<section className="section"><div className="shell detail-two-col"><h2>We check who gets each email and when.</h2><div><p>We check the recipient list, links, phone layout and where replies go. For emails that send automatically, we set the event that starts them and the conditions that stop them. For example, a booked appointment should stop further booking reminders.</p><p>We check whether emails arrive and whether people reply, buy or book. Clicks and unsubscribes help us decide what to change.</p></div></div></section>}
 {service.artifact==="website"&&<section className="section"><div className="shell detail-two-col"><h2>Test the actions that matter.</h2><div><p>We check menus, reading on a phone, required form fields and whether inquiries arrive. We also check that search engines can reach your pages and read accurate titles, descriptions and business details.</p><p>You receive access to the site and instructions for routine updates. We choose the website system with you before building.</p></div></div></section>}
 {service.details.map(detail=><section className="section" key={detail.heading}><div className="shell detail-two-col"><h2>{detail.heading}</h2><div>{detail.paragraphs.map(p=><p key={p}>{p}</p>)}</div></div></section>)}

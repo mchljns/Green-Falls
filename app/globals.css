@@ -315,3 +315,62 @@ h1,h2,h3{text-wrap:balance}
 @media(prefers-reduced-transparency:reduce){.site-header{background:#f8faf7;-webkit-backdrop-filter:none;backdrop-filter:none}}
 @media(prefers-reduced-motion:reduce){.text-link,.button,.form-status,.faq-list details::details-content{transition:none}.mobile-menu[open] nav>a{animation:none}}
 .service-specific .home-contact-copy h2{max-width:14ch}
+
+/* October 8, 2026: component pass. Press feedback, one row-link affordance, clickable cards, inline form states, service diagrams. */
+:root{--ease-out:cubic-bezier(.23,1,.32,1);--line:#aeb8b4}
+button:not(:disabled){cursor:pointer}
+.button{transition:transform 160ms var(--ease-out),background 140ms ease,border-color 140ms ease,color 140ms ease}
+.final-cta .button:hover{background:#101718;border-color:#101718}
+
+/* Cards: hairline grid inside one basalt frame; the whole card is the target. */
+.service-page-grid{gap:1px;background:var(--line);border:1px solid var(--basalt)}
+.service-summary{position:relative;border:0;background:var(--snowmelt);transition:background 150ms ease}
+.section-tone-blue .service-summary{background:var(--example-blue)}
+.service-summary>.text-link::after{content:"";position:absolute;inset:0}
+.service-summary>.text-link:focus-visible{outline:none}
+.service-summary:has(>.text-link:focus-visible){outline:3px solid var(--cascade);outline-offset:-3px}
+@media(hover:hover) and (pointer:fine){.service-summary:hover{background:#fff}.section-tone-blue .service-summary:hover{background:#e6f1f4}.service-summary:hover>.text-link{background-size:100% 2px}}
+
+/* Row links: the same arrow wherever a whole row is the link. Colour follows the text. */
+.studio-service-links>a::after,.diagnostic-list .diagnostic-link::after,.article-index .article-read::after{content:"";flex:none;width:18px;height:18px;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center/18px no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center/18px no-repeat;transition:transform 160ms var(--ease-out)}
+.studio-service-links>a::after{color:var(--cascade-deep)}
+.diagnostic-list .diagnostic-link,.article-index .article-read{display:inline-flex;align-items:center;gap:8px}
+@media(hover:hover) and (pointer:fine){.studio-service-links>a:hover::after,.diagnostic-list a:hover .diagnostic-link::after,.article-index>a:hover .article-read::after{transform:translateX(4px)}}
+
+/* FAQ: a glyph you can see, in the accent, turning to a cross when open. */
+.faq-list summary{gap:20px}
+.faq-list summary b{font-size:1.6rem;line-height:1;color:var(--cascade-deep);transition:transform 180ms var(--ease-out),color 150ms ease}
+@media(hover:hover) and (pointer:fine){.faq-list summary:hover{color:var(--cascade-deep)}}
+
+/* Approach steps: numerals carry the hierarchy; the output line is a label, not a rule. */
+.project-steps>li{align-items:start}
+.project-steps>li>span{font-family:var(--display);font-size:2rem;line-height:1;font-weight:600;padding-top:3px}
+.step-output,.section-tone-dark .project-steps .step-output{display:grid;grid-template-columns:auto 1fr;gap:14px;border:0;padding:0;font-weight:400;color:var(--on-forest)}
+.step-output strong{color:var(--lichen);font-weight:700;white-space:nowrap}
+.step-output span{color:var(--snowmelt)}
+@media(max-width:640px){.project-steps>li{grid-template-columns:40px 1fr;gap:16px}.project-steps>li>span{font-size:1.5rem;padding-top:2px}.step-output,.section-tone-dark .project-steps .step-output{grid-template-columns:1fr;gap:2px}}
+
+/* Lists: the deliverables list uses the same dash as the industry lists; link lists are not indented. */
+.scope-deliverables .plain-list li{padding-left:26px}
+.scope-deliverables .plain-list li::before{content:"";position:absolute;left:2px;top:calc(50% - 1px);width:12px;height:2px;background:var(--cascade)}
+.plain-list li:has(>.text-link){padding-left:0}
+
+/* Form: hover, inline invalid state after the first attempt, a select that matches the inputs. */
+.contact-form input,.contact-form textarea,.contact-form select{transition:border-color 150ms ease,box-shadow 150ms ease}
+@media(hover:hover) and (pointer:fine){.contact-form :is(input,textarea,select):hover:not(:focus){border-color:#6b7875}}
+.contact-form :is(input,textarea):user-invalid{border-color:#b7412c;box-shadow:0 0 0 3px rgb(183 65 44 / .16)}
+.contact-form select{appearance:none;-webkit-appearance:none;min-height:48px;padding-right:44px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2320282a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") right 14px center/16px no-repeat;cursor:pointer}
+.contact-form textarea{min-height:168px;resize:vertical}
+
+/* Service diagrams: one figure per service page, in the example tone. */
+.service-diagram-section{padding-block:56px}
+.service-diagram{margin:0 auto;max-width:880px;background:#fff;border:1px solid #a7b8ad;padding:32px}
+.service-diagram h2{font-size:clamp(1.5rem,2.4vw,2rem);line-height:1.12;margin:0 0 6px;max-width:none}
+.service-diagram svg{display:block;width:100%;height:auto;margin-top:18px}
+.service-diagram .portrait{display:none}
+.service-diagram figcaption{margin-top:18px;font-size:.875rem;line-height:1.55;color:#52605c;max-width:60ch;text-wrap:pretty}
+.diagram-ai svg.portrait{display:block;max-width:440px;margin-inline:auto}
+@media(max-width:760px){.service-diagram-section{padding-block:36px}}
+@media(max-width:640px){.service-diagram{padding:22px 18px}.service-diagram .landscape{display:none}.service-diagram .portrait{display:block}}
+
+@media(prefers-reduced-motion:reduce){.service-summary,.faq-list summary b,.contact-form :is(input,textarea,select),.studio-service-links>a::after,.diagnostic-list .diagnostic-link::after,.article-index .article-read::after{transition:none}}
