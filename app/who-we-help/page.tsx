@@ -3,7 +3,7 @@ import { SiteShell } from "../components/SiteShell";
 import { FinalCTA, PageHero } from "../components/PageBlocks";
 import { createPageMetadata } from "../lib/metadata";
 
-export const metadata = createPageMetadata({ title: "Marketing for Maine Trades, Shops & Restaurants", description: "Website and email marketing help for Maine contractors, independent shops and restaurants. Make it easier for customers to find you, inquire and return.", path: "/who-we-help" });
+export const metadata = createPageMetadata({ title: "Marketing for Maine Trades & Shops", description: "Website and email marketing help for Maine contractors, independent shops and restaurants. Make it easier for customers to find you, inquire and return.", path: "/who-we-help" });
 
 const groups = [
   { index: "01", title: "Trades and home services", signal: "Estimate / Schedule / Review", body: "Roofers, builders, remodelers, electricians, plumbers, HVAC companies and similar businesses need homeowners to understand their services, coverage and estimate process.", points: ["Accurate service-area information and local business listings", "Clear service pages and an easy path to request an estimate", "Follow-up after estimates and completed jobs", "Customer emails for seasonal services"], href: "/who-we-help/contractors", link: "Website help for contractors" },

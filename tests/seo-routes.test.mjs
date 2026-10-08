@@ -21,7 +21,16 @@ test('every sitemap page renders unique search metadata, one H1 and valid intern
     const path = new URL(url).pathname;
     const res = await get(path);
     assert.equal(res.status, 200, path);
+    assert.equal(res.headers.get('referrer-policy'), 'strict-origin-when-cross-origin', path);
+    assert.equal(res.headers.get('x-content-type-options'), 'nosniff', path);
+    assert.equal(res.headers.get('x-frame-options'), 'SAMEORIGIN', path);
+    assert.equal(res.headers.get('strict-transport-security'), 'max-age=31536000', path);
+    const nonce = res.headers.get('content-security-policy')?.match(/'nonce-([^']+)'/)?.[1];
+    assert.ok(nonce, `Missing script nonce: ${path}`);
     const html = await res.text(); bodies.set(path, html);
+    for (const script of html.matchAll(/<script\b[^>]*>/g)) {
+      assert.ok(script[0].includes(`nonce="${nonce}"`), `Script without CSP nonce: ${path}`);
+    }
     const title = html.match(/<title>(.*?)<\/title>/s)?.[1];
     const description = html.match(/<meta name="description" content="([^"]*)"/)?.[1];
     assert.ok(title && description, `Missing metadata: ${path}`);
@@ -33,6 +42,7 @@ test('every sitemap page renders unique search metadata, one H1 and valid intern
     assert.doesNotMatch(html, /<meta[^>]*content="[^"]*noindex/);
     assert.match(html, /favicon\.png/);
     assert.doesNotMatch(html, /Mike|Michael Jones/);
+    assert.equal([...html.matchAll(/<span class="sr-only">Green Falls Co\. home<\/span>/g)].length, 2, path);
   }
   for (const [path, html] of bodies) {
     for (const match of html.matchAll(/<a\b[^>]*href="([^"]+)"/g)) {

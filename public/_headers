@@ -1,0 +1,16 @@
+# Cloudflare serves static assets before the Worker. Dynamic responses receive
+# the equivalent security headers in worker/index.ts.
+/*
+  Content-Security-Policy: default-src 'none'; sandbox
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Strict-Transport-Security: max-age=31536000
+
+# The live waterfall WebP was served as application/octet-stream.
+/images/green-falls-waterfall.webp
+  Content-Type: image/webp
+
+# Preserve vinext's long-lived caching for hashed build assets.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable

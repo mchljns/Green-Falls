@@ -348,7 +348,7 @@ export const services: Service[] = [
         "a": "We scope the review around the decision you need to make, the systems involved and how much research is needed. The proposal states the work, cost and what you’ll receive. You don’t need to commit to a retainer to discuss a focused project."
       }
     ],
-    "seoTitle": "Small Business Marketing Consultant in Maine",
+    "seoTitle": "Maine Small Business Marketing Consultant",
     "description": "A Maine marketing consultant for small businesses. Review your website, email and spending, then get a 90-day plan with priorities and clear next steps.",
     "details": [
       {
@@ -388,8 +388,8 @@ export const insights = [
     "slug": "email-automations-small-business",
     "topic": "Email marketing",
     "title": "Which automated emails should a small business set up first?",
-    "seoTitle": "Which Email Automations Should You Set Up First?",
-    "description": "Choose your first email automation by the customer need: a welcome, checkout reminder or post-purchase message. Includes setup checks and measurement advice.",
+    "seoTitle": "Email Automations to Set Up First",
+    "description": "Choose your first email automation by customer need: a welcome, checkout reminder or post-purchase message. Includes setup and measurement checks.",
     "dek": "Choose a useful customer moment before building a long sequence.",
     "read": "5 min read",
     "intro": "Start with the customer moment you’re currently missing. If people join your list and hear nothing, build a welcome email. If shoppers begin checkout but don’t finish, review checkout follow-up. If buyers need help using what they bought, start after the purchase. You don’t need every flow before the first one can be useful.",
@@ -449,8 +449,8 @@ export const insights = [
     "slug": "website-redesign-quote-checklist",
     "topic": "Website planning",
     "title": "What should a small business website redesign quote include?",
-    "seoTitle": "Small Business Website Redesign Quote Checklist",
-    "description": "Compare website redesign proposals: pages, copy, SEO migration, forms, ownership, hosting and support. Know what changes the cost before choosing a provider.",
+    "seoTitle": "Website Redesign Quote Checklist",
+    "description": "Compare website redesign proposals: pages, copy, SEO migration, forms, ownership, hosting and support. Know what affects the cost.",
     "dek": "Compare the work, the ongoing costs and what you’ll own before choosing a provider.",
     "read": "5 min read",
     "intro": "Two website quotes can describe very different projects. One may include writing, moving existing pages and testing inquiry delivery; another may cover the design and build only. Before comparing totals, ask each provider to describe the same pages, features and handoff. Here’s what to look for.",
@@ -650,7 +650,7 @@ export const insights = [
     "published": "2026-08-18",
     "updated": "2026-10-02",
     "sources": [],
-    "seoTitle": "Using AI to Draft Small Business Customer Replies",
+    "seoTitle": "Using AI to Draft Customer Replies",
     "description": "A practical first AI project for a small business: draft customer replies using approved information, test difficult inquiries and review before sending.",
     "related": [
       {

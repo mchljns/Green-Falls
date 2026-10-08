@@ -1,12 +1,15 @@
 import { AnalyticsPageViews } from "./AnalyticsPageViews";
+import { headers } from "next/headers";
 
 export const googleAnalyticsId = "G-MQG31KKRKC";
 
-export function GoogleAnalytics() {
+export async function GoogleAnalytics() {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   return (
     <>
       <script
         id="google-analytics"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: `(function () {
 var trackingDisabled = location.hostname !== 'greenfalls.co';
 var preference = new URLSearchParams(location.search).get('analytics');
