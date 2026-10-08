@@ -4,7 +4,7 @@ import { FinalCTA, PageHero } from "../components/PageBlocks";
 import { insights } from "../lib/content";
 import { createPageMetadata } from "../lib/metadata";
 
-export const metadata = createPageMetadata({ title: "Small Business Website & Email Marketing Guides", description: "Practical guides to website inquiries, redesign proposals, email automation and AI customer replies. Make a better next marketing decision.", path: "/insights" });
+export const metadata = createPageMetadata({ title: "Website, Email & AI Guides", description: "Practical guides to website inquiries, redesign proposals, email automation and AI customer replies. Make a better next marketing decision.", path: "/insights" });
 
 export default function InsightsPage() {
   return <SiteShell><main id="main-content"><PageHero title="Advice for your next marketing decision." intro="Practical guides to improving inquiries, comparing website proposals, planning customer emails and putting AI to work." />

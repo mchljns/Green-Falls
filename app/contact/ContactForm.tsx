@@ -6,7 +6,7 @@ type FormState = "idle" | "sending" | "sent" | "error";
 
 const formEndpoint = "https://formsubmit.co/ajax/info@greenfalls.co";
 
-export function ContactForm({ source = "contact" }: { source?: "home" | "contact" | "audience" }) {
+export function ContactForm({ source = "contact", heading }: { source?: "home" | "contact" | "audience"; heading?: string }) {
   const [status, setStatus] = useState<FormState>("idle");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -63,7 +63,7 @@ export function ContactForm({ source = "contact" }: { source?: "home" | "contact
   }
 
   return <form className="contact-form" onSubmit={handleSubmit} aria-busy={status === "sending"}>
-    <h2 className="form-title">Tell us about your project.</h2>
+    <h2 className="form-title">{heading ?? (source === "home" ? "Tell us about your project." : "Tell us what you’re working on.")}</h2>
     <p className="form-intro">A few plain sentences are enough. You don’t need to know which service you need.</p>
     <label className="form-honeypot" aria-hidden="true"><span>Leave this field empty</span><input name="company-site" tabIndex={-1} autoComplete="off" /></label>
     <div className="field-row"><label><span>Name</span><input name="name" autoComplete="name" required /></label><label><span>Business</span><input name="business" autoComplete="organization" required /></label></div>
