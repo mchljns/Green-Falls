@@ -1,10 +1,13 @@
 /** Cloudflare Worker entry point for the vinext-starter template. */
 import { handleImageOptimization, DEFAULT_DEVICE_SIZES, DEFAULT_IMAGE_SIZES } from "vinext/server/image-optimization";
 import handler from "vinext/server/app-router-entry";
+import { handleMixDownload, MIX_DOWNLOAD_PATH } from "./mix-download";
 
 interface Env {
   ASSETS: Fetcher;
   DB: D1Database;
+  /** Password for greenfalls.co/mix (a Worker secret). */
+  MIX_PASSWORD?: string;
   IMAGES: {
     input(stream: ReadableStream): {
       transform(options: Record<string, unknown>): {
@@ -39,6 +42,8 @@ const worker = {
         },
       }, allowedWidths);
     }
+
+    if (url.pathname === MIX_DOWNLOAD_PATH) return handleMixDownload(request, env.MIX_PASSWORD);
 
     return handler.fetch(request, env, ctx);
   },
